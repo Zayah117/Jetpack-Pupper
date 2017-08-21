@@ -8,8 +8,8 @@ using UnityEngine.EventSystems;
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler {
     private Image backgroundImage;
     private Image joystickImage;
-    private Vector3 inputVector;
-    private float input;
+
+    public float input;
 
     private void Start() {
         backgroundImage = GetComponent<Image>();
