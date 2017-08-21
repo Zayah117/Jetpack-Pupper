@@ -6,6 +6,7 @@ public class PupperController : MonoBehaviour {
     public VirtualJoystick virtualJoystick;
     public float rotationLimit;
     public float moveSpeed;
+    public float bounds;
 
 	void Update () {
         // Rotate
@@ -13,7 +14,13 @@ public class PupperController : MonoBehaviour {
 
         // Move
         transform.position += transform.up * Time.deltaTime * moveSpeed;
-        // Keep y at 0
-        transform.position = new Vector3(transform.position.x, 0);
+        // Keep keep x in bounds and y at 0
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -bounds, bounds), 0);
 	}
+
+    void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Asteroid")) {
+            GameController.instance.KillPupper(gameObject);
+        }
+    }
 }

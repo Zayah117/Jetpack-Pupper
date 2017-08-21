@@ -80,8 +80,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5f935f66d26564ba4d998837f5279f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnAreaX: 6
-  targetAreaX: 6
+  spawnAreaX: 7
+  targetAreaX: 7
   asteroid: {fileID: 114418734305071930, guid: a40f448dcbe96ab46a44a9b197ba4c19, type: 2}
   minSpawnRate: 0.5
-  maxSpawnRate: 1.5
+  maxSpawnRate: 1
