@@ -7,17 +7,13 @@ public class PupperController : MonoBehaviour {
     public float rotationLimit;
     public float moveSpeed;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
 	void Update () {
         // Rotate
         gameObject.transform.eulerAngles = new Vector3(0, 0, virtualJoystick.input * rotationLimit * -1.0F);
 
         // Move
         transform.position += transform.up * Time.deltaTime * moveSpeed;
+        // Keep y at 0
+        transform.position = new Vector3(transform.position.x, 0);
 	}
 }

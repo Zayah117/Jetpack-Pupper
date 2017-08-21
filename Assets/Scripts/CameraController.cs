@@ -7,7 +7,7 @@ public class CameraController : MonoBehaviour {
 
     private float yOffSet = 2.5f;
 
-	void Update () {
+    void Start() {
         transform.position = new Vector3(transform.position.x, player.position.y + yOffSet, transform.position.z);
-	}
+    }
 }
