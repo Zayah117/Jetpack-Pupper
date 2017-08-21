@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
     public Transform player;
 
-    private float yOffSet = 2.5f;
+    private float yOffSet = 2f;
 
     void Start() {
         transform.position = new Vector3(transform.position.x, player.position.y + yOffSet, transform.position.z);
