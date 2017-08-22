@@ -52,5 +52,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restartDelay: 3
-  speedMultiplier: 1
+  speedMultiplier: 0.5
   spawner: {fileID: 0}

@@ -10,6 +10,7 @@ public class AsteroidController : MonoBehaviour {
     public float maxScale;
     public Vector3 target;
 
+    float speedMultiplier;
     float moveSpeed;
     float scale;
 
@@ -24,11 +25,11 @@ public class AsteroidController : MonoBehaviour {
     }
 
     public void MultiplySpeed(float multiplier) {
-        moveSpeed *= multiplier;
+        speedMultiplier = multiplier;
     }
 
     void Update () {
-        transform.position += transform.up * Time.deltaTime * moveSpeed;
+        transform.position += transform.up * Time.deltaTime * moveSpeed * speedMultiplier;
 	}
 
     private void OnCollisionEnter2D(Collision2D collision) {

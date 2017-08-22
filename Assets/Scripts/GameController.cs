@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
     public static GameController instance;
     public float restartDelay;
-    public float speedMultiplier = 1.0f;
+    public float speedMultiplier = 0.5f;
     public Spawner spawner;
 
     float speedMultiRate = 1.0f;
