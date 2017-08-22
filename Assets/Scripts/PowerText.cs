@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PowerText : MonoBehaviour {
-    public GameController gameController;
     Text myText;
 
     float power;
@@ -19,6 +18,6 @@ public class PowerText : MonoBehaviour {
     }
 
     void GetPower() {
-        power = Mathf.Round(gameController.speedMultiplier * 100f);
+        power = Mathf.Round(GameController.instance.speedMultiplier * 100f);
     }
 }

@@ -6,12 +6,8 @@ public class SpawnTrigger : MonoBehaviour {
     public float speed;
 
 	void Update () {
-        transform.position += -transform.up * speed * Time.deltaTime;
+        transform.position += -transform.up * speed * Time.deltaTime * GameController.instance.speedMultiplier;
 	}
-
-    public void SetSpeed(float newSpeed) {
-        speed = newSpeed;
-    }
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {

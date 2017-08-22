@@ -7,10 +7,9 @@ public class GameController : MonoBehaviour {
     public static GameController instance;
     public float restartDelay;
     public float speedMultiplier = 0.5f;
-    public Spawner spawner;
 
     float speedMultiRate = 1.0f;
-    float nextSpeedMultiplyer = 0f;
+    float nextSpeedMultiplyer;
 
     void Awake() {
         if (instance == null) {
@@ -23,7 +22,6 @@ public class GameController : MonoBehaviour {
         if (nextSpeedMultiplyer > speedMultiRate) {
             nextSpeedMultiplyer -= speedMultiRate;
             UpSpeed();
-            spawner.UpdateMultiplier(speedMultiplier);
         }
     }
 

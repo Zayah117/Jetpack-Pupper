@@ -24,13 +24,9 @@ public class AsteroidController : MonoBehaviour {
         transform.up = target - transform.position;
     }
 
-    public void MultiplySpeed(float multiplier) {
-        speedMultiplier = multiplier;
-    }
-
     void Update () {
-        transform.position += transform.up * Time.deltaTime * moveSpeed * speedMultiplier;
-	}
+        transform.position += transform.up * Time.deltaTime * moveSpeed * GameController.instance.speedMultiplier;
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Asteroid") {

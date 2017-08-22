@@ -138,10 +138,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnAreaX: 7
   targetAreaX: 7
-  asteroid: {fileID: 114418734305071930, guid: a40f448dcbe96ab46a44a9b197ba4c19, type: 2}
   minSpawnRate: 0.75
   maxSpawnRate: 1.25
   spawnTriggerSpeed: 5
+  asteroid: {fileID: 114418734305071930, guid: a40f448dcbe96ab46a44a9b197ba4c19, type: 2}
 --- !u!114 &114879618353239972
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,4 +153,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b1ad5a903eaf4a46ab3b127381cce6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
