@@ -7,8 +7,8 @@ public class GameController : MonoBehaviour {
     public static GameController instance;
     public float restartDelay;
     public float speedMultiplier = 0.5f;
+    public float speedMultiRate = 1.0f;
 
-    float speedMultiRate = 1.0f;
     float nextSpeedMultiplyer;
 
     void Awake() {
