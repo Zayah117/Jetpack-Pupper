@@ -13,7 +13,7 @@ public class PupperController : MonoBehaviour {
         gameObject.transform.eulerAngles = new Vector3(0, 0, virtualJoystick.input * rotationLimit * -1.0F);
 
         // Move
-        transform.position += transform.up * Time.deltaTime * moveSpeed;
+        transform.position += transform.up * Time.deltaTime * moveSpeed * GameController.instance.speedMultiplier;
         // Keep keep x in bounds and y at 0
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -bounds, bounds), 0);
 	}

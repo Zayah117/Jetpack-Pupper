@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   virtualJoystick: {fileID: 0}
   rotationLimit: 45
-  moveSpeed: 10
+  moveSpeed: 5
   bounds: 2.5
 --- !u!212 &212722018851481140
 SpriteRenderer:
