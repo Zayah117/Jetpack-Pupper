@@ -141,7 +141,9 @@ MonoBehaviour:
   minSpawnRate: 0.75
   maxSpawnRate: 1.25
   spawnTriggerSpeed: 5
+  fuelSpawnChance: 0.1
   asteroid: {fileID: 114418734305071930, guid: a40f448dcbe96ab46a44a9b197ba4c19, type: 2}
+  fuel: {fileID: 1885194878844666, guid: d3c43483a77dbfd4ba354720b006d8d3, type: 2}
 --- !u!114 &114879618353239972
 MonoBehaviour:
   m_ObjectHideFlags: 1

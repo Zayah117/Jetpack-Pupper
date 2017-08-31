@@ -10,7 +10,6 @@ public class AsteroidController : MonoBehaviour {
     public float maxScale;
     public Vector3 target;
 
-    float speedMultiplier;
     float moveSpeed;
     float scale;
 
@@ -28,7 +27,7 @@ public class AsteroidController : MonoBehaviour {
         transform.position += transform.up * Time.deltaTime * moveSpeed * GameController.instance.speedMultiplier;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) {
+    void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.tag == "Asteroid") {
             Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
         }

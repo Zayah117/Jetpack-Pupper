@@ -53,4 +53,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartDelay: 3
   speedMultiplier: 0.5
-  speedMultiRate: 0.5
+  speedMultiRate: 10
