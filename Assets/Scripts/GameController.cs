@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
     public static GameController instance;
+    public GameObject gameOverPanel;
     public float restartDelay;
     public float speedMultiplier = 0.5f;
     public float speedMultiRate = 1.0f;
@@ -48,7 +50,10 @@ public class GameController : MonoBehaviour {
     public void KillPupper(GameObject player) {
         pupperIsDead = true;
         player.SetActive(false);
-        Invoke("RestartGame", restartDelay);
+
+        gameOverPanel.SetActive(true);
+
+        // Invoke("RestartGame", restartDelay);
     }
 
     void RestartGame() {

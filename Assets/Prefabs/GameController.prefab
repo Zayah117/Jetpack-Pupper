@@ -51,6 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc73c88ae14704241b7fed8a2352235a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverPanel: {fileID: 0}
   restartDelay: 3
   speedMultiplier: 0.5
   speedMultiRate: 10
+  playerScore: 0
+  pupperIsDead: 0
