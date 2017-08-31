@@ -52,6 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverPanel: {fileID: 0}
+  hudPanel: {fileID: 0}
   restartDelay: 3
   speedMultiplier: 0.5
   speedMultiRate: 10

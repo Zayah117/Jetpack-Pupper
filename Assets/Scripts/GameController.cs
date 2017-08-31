@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class GameController : MonoBehaviour {
     public static GameController instance;
     public GameObject gameOverPanel;
+    public GameObject hudPanel;
     public float restartDelay;
     public float speedMultiplier = 0.5f;
     public float speedMultiRate = 1.0f;
@@ -51,6 +52,7 @@ public class GameController : MonoBehaviour {
         pupperIsDead = true;
         player.SetActive(false);
 
+        hudPanel.SetActive(false);
         gameOverPanel.SetActive(true);
 
         // Invoke("RestartGame", restartDelay);
