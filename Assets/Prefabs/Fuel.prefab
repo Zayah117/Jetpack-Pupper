@@ -102,6 +102,7 @@ MonoBehaviour:
   speed: 2
   speedBonus: 0.05
   fuel: 0.5
+  scoreValue: 10
 --- !u!212 &212701898046620324
 SpriteRenderer:
   m_ObjectHideFlags: 1

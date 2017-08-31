@@ -11,7 +11,6 @@ public class PupperController : MonoBehaviour {
     public float fuelDrain; 
 
     float originalY;
-    float maxFuel = 1;
 
     void Start() {
         originalY = transform.position.y;
