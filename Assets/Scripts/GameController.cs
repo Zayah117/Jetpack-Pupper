@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
     public float speedMultiplier = 0.5f;
     public float speedMultiRate = 1.0f;
     public int playerScore = 0;
+    public bool pupperIsDead;
 
     float nextSpeedMultiplyer;
     float nextScoreIncrease;
@@ -21,16 +22,18 @@ public class GameController : MonoBehaviour {
     }
 
     void Update() {
-        nextSpeedMultiplyer += Time.deltaTime;
-        if (nextSpeedMultiplyer > speedMultiRate) {
-            nextSpeedMultiplyer -= speedMultiRate;
-            UpSpeed();
-        }
+        if (!pupperIsDead) {
+            nextSpeedMultiplyer += Time.deltaTime;
+            if (nextSpeedMultiplyer > speedMultiRate) {
+                nextSpeedMultiplyer -= speedMultiRate;
+                UpSpeed();
+            }
 
-        nextScoreIncrease += Time.deltaTime;
-        if (nextScoreIncrease > scoreIncreaseRate) {
-            nextScoreIncrease -= scoreIncreaseRate;
-            UpScore();
+            nextScoreIncrease += Time.deltaTime;
+            if (nextScoreIncrease > scoreIncreaseRate) {
+                nextScoreIncrease -= scoreIncreaseRate;
+                UpScore();
+            }
         }
     }
 
@@ -43,11 +46,12 @@ public class GameController : MonoBehaviour {
     }
 
     public void KillPupper(GameObject player) {
+        pupperIsDead = true;
         player.SetActive(false);
         Invoke("RestartGame", restartDelay);
     }
 
     void RestartGame() {
-        SceneManager.LoadScene("scene");
+        SceneManager.LoadScene("Scene");
     }
 }
