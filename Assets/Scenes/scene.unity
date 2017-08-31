@@ -417,6 +417,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.0001
+--- !u!114 &1167669805 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114428183197938588, guid: ee098edd02255ac499ffc89ef1c89ddc,
+    type: 2}
+  m_PrefabInternal: {fileID: 733841889}
+  m_Script: {fileID: 11500000, guid: 333ea747e7e29144ab2de82a620c4997, type: 3}
 --- !u!1 &1593555525
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,49 +653,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114249481704044680, guid: f10ac70f54de25a43924c459e9999c71,
+        type: 2}
+      propertyPath: pupper
+      value: 
+      objectReference: {fileID: 1167669805}
     - target: {fileID: 1086803351722714, guid: f10ac70f54de25a43924c459e9999c71, type: 2}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 114719265261674522, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0.65517247
-      objectReference: {fileID: 0}
-    - target: {fileID: 114719265261674522, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114719265261674522, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224348878927761818, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: -21.800049
-      objectReference: {fileID: 0}
-    - target: {fileID: 224348878927761818, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224348878927761818, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224348878927761818, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 58.19995
-      objectReference: {fileID: 0}
-    - target: {fileID: 224348878927761818, guid: f10ac70f54de25a43924c459e9999c71,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f10ac70f54de25a43924c459e9999c71, type: 2}

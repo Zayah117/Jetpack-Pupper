@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   speedBonus: 0.05
+  fuel: 0.5
 --- !u!212 &212701898046620324
 SpriteRenderer:
   m_ObjectHideFlags: 1

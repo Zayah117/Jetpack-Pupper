@@ -7,8 +7,11 @@ public class PupperController : MonoBehaviour {
     public float rotationLimit;
     public float moveSpeed;
     public float bounds;
+    public float fuel;
+    public float fuelDrain; 
 
     float originalY;
+    float maxFuel = 1;
 
     void Start() {
         originalY = transform.position.y;
@@ -22,7 +25,17 @@ public class PupperController : MonoBehaviour {
         transform.position += transform.up * Time.deltaTime * moveSpeed * GameController.instance.speedMultiplier;
         // Keep keep x in bounds and y at 0
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -bounds, bounds), originalY);
+
+        // Drain fuel
+        DrainFuel();
 	}
+
+    void DrainFuel() {
+        fuel -= fuelDrain * Time.deltaTime * GameController.instance.speedMultiplier;
+        if (fuel <= 0) {
+            GameController.instance.KillPupper(gameObject);
+        }
+    }
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Asteroid")) {
