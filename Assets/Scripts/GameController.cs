@@ -24,6 +24,10 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    void Start() {
+        Screen.orientation = ScreenOrientation.Portrait;
+    }
+
     void Update() {
         if (!pupperIsDead) {
             nextSpeedMultiplyer += Time.deltaTime;
