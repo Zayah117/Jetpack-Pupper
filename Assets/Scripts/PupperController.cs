@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class PupperController : MonoBehaviour {
     public VirtualJoystick virtualJoystick;
+    public GameObject bullet;
+    public Transform rightCannon;
+    public Transform leftCannon;
     public float rotationLimit;
     public float moveSpeed;
     public float bounds;
     public float fuel;
     public float fuelDrain;
+    public float fireRate;
     public int maxHealth = 4;
     public int health;
 
     float originalY;
+    float fireTime;
+    bool fireEnabled;
 
     void Start() {
         originalY = transform.position.y;
@@ -30,12 +36,34 @@ public class PupperController : MonoBehaviour {
 
         // Drain fuel
         DrainFuel();
+
+        // Fire Cannons
+        ToggleFireEnabled(virtualJoystick.fireEnabled); // Checks if joystick.fireEnabled has changed
+        fireTime += Time.deltaTime;
+        if (fireEnabled && fireTime > fireRate) {
+            FireCannons();
+        }
 	}
 
     void DrainFuel() {
         fuel -= fuelDrain * Time.deltaTime * GameController.instance.speedMultiplier;
         if (fuel <= 0) {
             GameController.instance.KillPupper(gameObject);
+        }
+    }
+
+    void FireCannons() {
+        Instantiate(bullet, rightCannon.position, gameObject.transform.rotation);
+        Instantiate(bullet, leftCannon.position, gameObject.transform.rotation);
+        fireTime -= fireRate;
+    }
+
+    void ToggleFireEnabled(bool joystickInput) {
+        if (!fireEnabled && joystickInput == true) {
+            fireTime = fireRate;
+            fireEnabled = true;
+        } else if (fireEnabled && joystickInput == false) {
+            fireEnabled = false;
         }
     }
 

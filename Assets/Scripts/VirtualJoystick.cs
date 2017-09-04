@@ -10,6 +10,8 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     private Image joystickImage;
 
     public float input;
+    public float fireThreshold = 1.20f;
+    public bool fireEnabled;
 
     private void Start() {
         backgroundImage = GetComponent<Image>();
@@ -27,7 +29,15 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             input = Mathf.Clamp(pos.x * 2, -1.0F, 1.0F);
 
             // Move image
-            joystickImage.rectTransform.anchoredPosition = new Vector3(Mathf.Clamp(input * (backgroundImage.rectTransform.sizeDelta.x / 2), -250F, 250F), 0);
+            int transformY = 0;
+            fireEnabled = false;
+
+            if (pos.y > fireThreshold) {
+                transformY = 50;
+                fireEnabled = true;
+            }
+
+            joystickImage.rectTransform.anchoredPosition = new Vector3(Mathf.Clamp(input * (backgroundImage.rectTransform.sizeDelta.x / 2), -250F, 250F), transformY);
         }
     }
 
@@ -37,6 +47,7 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
     public virtual void OnPointerUp(PointerEventData ped) {
         input = 0;
+        fireEnabled = false;
         joystickImage.rectTransform.anchoredPosition = Vector3.zero;
     }
 }
