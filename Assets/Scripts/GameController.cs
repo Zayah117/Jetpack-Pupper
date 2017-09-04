@@ -6,13 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
     public static GameController instance;
-    public GameObject gameOverPanel;
-    public GameObject hudPanel;
     public float restartDelay;
     public float speedMultiplier = 0.5f;
     public float speedMultiRate = 1.0f;
     public int playerScore = 0;
     public bool pupperIsDead;
+    public UI ui;
 
     float nextSpeedMultiplyer;
     float nextScoreIncrease;
@@ -52,12 +51,43 @@ public class GameController : MonoBehaviour {
         playerScore += 1;
     }
 
+    public void UpdateHealthBars(GameObject player) {
+        int playerHealth = player.GetComponent<PupperController>().health;
+
+        if (playerHealth == 4) {
+            ui.health1.color = ui.red;
+            ui.health2.color = ui.red;
+            ui.health3.color = ui.red;
+            ui.health4.color = ui.red;
+        } else if (playerHealth == 3) {
+            ui.health1.color = ui.white;
+            ui.health2.color = ui.red;
+            ui.health3.color = ui.red;
+            ui.health4.color = ui.red;
+        } else if (playerHealth == 2) {
+            ui.health1.color = ui.white;
+            ui.health2.color = ui.white;
+            ui.health3.color = ui.red;
+            ui.health4.color = ui.red;
+        } else if (playerHealth == 1) {
+            ui.health1.color = ui.white;
+            ui.health2.color = ui.white;
+            ui.health3.color = ui.white;
+            ui.health4.color = ui.red;
+        } else {
+            ui.health1.color = ui.white;
+            ui.health2.color = ui.white;
+            ui.health3.color = ui.white;
+            ui.health4.color = ui.white;
+        }
+    }
+
     public void KillPupper(GameObject player) {
         pupperIsDead = true;
         player.SetActive(false);
 
-        hudPanel.SetActive(false);
-        gameOverPanel.SetActive(true);
+        ui.hudPanel.SetActive(false);
+        ui.gameOverPanel.SetActive(true);
 
         // Invoke("RestartGame", restartDelay);
     }

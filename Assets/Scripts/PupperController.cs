@@ -8,12 +8,15 @@ public class PupperController : MonoBehaviour {
     public float moveSpeed;
     public float bounds;
     public float fuel;
-    public float fuelDrain; 
+    public float fuelDrain;
+    public int maxHealth = 4;
+    public int health;
 
     float originalY;
 
     void Start() {
         originalY = transform.position.y;
+        health = 4;
     }
 
 	void Update () {
@@ -36,9 +39,18 @@ public class PupperController : MonoBehaviour {
         }
     }
 
+    void TakeDamage() {
+        health -= 1;
+        GameController.instance.UpdateHealthBars(gameObject);
+        if (health <= 0) {
+            GameController.instance.KillPupper(gameObject);
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Asteroid")) {
-            GameController.instance.KillPupper(gameObject);
+            Destroy(collision.gameObject);
+            TakeDamage();
         }
     }
 }

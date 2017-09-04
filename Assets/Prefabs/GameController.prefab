@@ -51,10 +51,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc73c88ae14704241b7fed8a2352235a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverPanel: {fileID: 0}
-  hudPanel: {fileID: 0}
   restartDelay: 3
   speedMultiplier: 0.5
-  speedMultiRate: 10
+  speedMultiRate: 1
   playerScore: 0
   pupperIsDead: 0
+  ui:
+    hudPanel: {fileID: 0}
+    gameOverPanel: {fileID: 0}
+    health1: {fileID: 0}
+    health2: {fileID: 0}
+    health3: {fileID: 0}
+    health4: {fileID: 0}
