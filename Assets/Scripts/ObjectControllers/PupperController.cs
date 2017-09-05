@@ -15,6 +15,8 @@ public class PupperController : MonoBehaviour {
     public float fireRate;
     public int maxHealth = 4;
     public int health;
+    public int maxAmmo = 200;
+    public int ammo;
 
     float originalY;
     float fireCoolDown;
@@ -57,9 +59,12 @@ public class PupperController : MonoBehaviour {
     }
 
     void FireCannons() {
-        Instantiate(bullet, rightCannon.position, gameObject.transform.rotation);
-        Instantiate(bullet, leftCannon.position, gameObject.transform.rotation);
-        fireCoolDown = 0;
+        if (ammo > 0) {
+            Instantiate(bullet, rightCannon.position, gameObject.transform.rotation);
+            Instantiate(bullet, leftCannon.position, gameObject.transform.rotation);
+            fireCoolDown = 0;
+            ammo -= 1;
+        }
     }
 
     void TakeDamage() {

@@ -87,3 +87,4 @@ MonoBehaviour:
   pickups:
   - {fileID: 1885194878844666, guid: d3c43483a77dbfd4ba354720b006d8d3, type: 2}
   - {fileID: 1141813950341884, guid: c8efc37bdec7a36448cf058088c7c188, type: 2}
+  - {fileID: 1503037747362848, guid: bca201bdd6621cf49862ca985138b484, type: 2}

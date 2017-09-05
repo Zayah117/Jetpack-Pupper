@@ -169,6 +169,8 @@ MonoBehaviour:
   fireRate: 0.15
   maxHealth: 4
   health: 0
+  maxAmmo: 200
+  ammo: 100
 --- !u!212 &212722018851481140
 SpriteRenderer:
   m_ObjectHideFlags: 1
