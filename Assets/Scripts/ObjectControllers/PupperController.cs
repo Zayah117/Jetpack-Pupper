@@ -35,7 +35,7 @@ public class PupperController : MonoBehaviour {
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, -bounds, bounds), originalY);
 
         // Drain fuel
-        DrainFuel();
+        //DrainFuel();
 
         // Fire Cannons
         fireCoolDown += Time.deltaTime * GameController.instance.speedMultiplier;

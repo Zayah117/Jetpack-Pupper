@@ -35,10 +35,4 @@ public class AsteroidController : MonoBehaviour, ISpawnable {
     public void RotateTowards(Vector3 target) {
         transform.up = target - transform.position;
     }
-
-    void OnCollisionEnter2D(Collision2D collision) {
-        if (collision.gameObject.tag == "Asteroid") {
-            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), gameObject.GetComponent<Collider2D>());
-        }
-    }
 }
