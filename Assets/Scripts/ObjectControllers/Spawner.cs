@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
     public float minSpawnRate;
     public float maxSpawnRate;
+    public float pickupChance;
     public GameObject asteroid;
     public GameObject[] pickups;
 
@@ -20,7 +21,13 @@ public class Spawner : MonoBehaviour {
         if (nextSpawn > spawnRate) {
             spawnRate = NewSpawnRate();
             nextSpawn = 0;
-            SpawnObject(asteroid);
+
+            float chance = Random.Range(0.0f, 1.0f);
+            if (chance <= pickupChance) {
+                SpawnObject(pickups[Random.Range(0, pickups.Length - 1)]);
+            } else {
+                SpawnObject(asteroid);
+            }
         }
     }
 
