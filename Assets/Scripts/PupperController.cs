@@ -17,8 +17,8 @@ public class PupperController : MonoBehaviour {
     public int health;
 
     float originalY;
-    float fireTime;
-    bool fireEnabled;
+    float fireCoolDown;
+    bool isFiring;
 
     void Start() {
         originalY = transform.position.y;
@@ -27,7 +27,7 @@ public class PupperController : MonoBehaviour {
 
 	void Update () {
         // Rotate
-        gameObject.transform.eulerAngles = new Vector3(0, 0, virtualJoystick.input * rotationLimit * -1.0F);
+        gameObject.transform.eulerAngles = new Vector3(0, 0, virtualJoystick.input.x * rotationLimit * -1.0F);
 
         // Move
         transform.position += transform.up * Time.deltaTime * moveSpeed * GameController.instance.speedMultiplier;
@@ -38,9 +38,8 @@ public class PupperController : MonoBehaviour {
         DrainFuel();
 
         // Fire Cannons
-        ToggleFireEnabled(virtualJoystick.fireEnabled); // Checks if joystick.fireEnabled has changed
-        fireTime += Time.deltaTime;
-        if (fireEnabled && fireTime > fireRate) {
+        fireCoolDown += Time.deltaTime;
+        if (virtualJoystick.input.y > virtualJoystick.yThreshold && fireCoolDown > fireRate) {
             FireCannons();
         }
 	}
@@ -55,16 +54,7 @@ public class PupperController : MonoBehaviour {
     void FireCannons() {
         Instantiate(bullet, rightCannon.position, gameObject.transform.rotation);
         Instantiate(bullet, leftCannon.position, gameObject.transform.rotation);
-        fireTime -= fireRate;
-    }
-
-    void ToggleFireEnabled(bool joystickInput) {
-        if (!fireEnabled && joystickInput == true) {
-            fireTime = fireRate;
-            fireEnabled = true;
-        } else if (fireEnabled && joystickInput == false) {
-            fireEnabled = false;
-        }
+        fireCoolDown = 0;
     }
 
     void TakeDamage() {

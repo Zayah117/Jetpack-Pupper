@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Asteroid
   - Fuel
+  - Bullet
   layers:
   - Default
   - TransparentFX

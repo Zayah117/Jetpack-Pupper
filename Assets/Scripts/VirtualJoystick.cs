@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 
 // Tutorial: https://www.youtube.com/watch?v=uSnZuBhOA2U
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler {
-    private Image backgroundImage;
-    private Image joystickImage;
+    Image backgroundImage;
+    Image joystickImage;
 
-    public float input;
-    public float fireThreshold = 1.20f;
-    public bool fireEnabled;
+    [HideInInspector]
+    public float yThreshold = 1.15f;
+    public Vector2 input;
 
     private void Start() {
         backgroundImage = GetComponent<Image>();
@@ -26,18 +26,15 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             pos.y = (pos.y / backgroundImage.rectTransform.sizeDelta.y);
 
             // Input will be between -1 and 1
-            input = Mathf.Clamp(pos.x * 2, -1.0F, 1.0F);
+            input = new Vector2(Mathf.Clamp(pos.x * 2, -1.0F, 1.0F), pos.y);
 
             // Move image
             int transformY = 0;
-            fireEnabled = false;
-
-            if (pos.y > fireThreshold) {
+            if (input.y > yThreshold) {
                 transformY = 50;
-                fireEnabled = true;
             }
 
-            joystickImage.rectTransform.anchoredPosition = new Vector3(Mathf.Clamp(input * (backgroundImage.rectTransform.sizeDelta.x / 2), -250F, 250F), transformY);
+            joystickImage.rectTransform.anchoredPosition = new Vector3(Mathf.Clamp(input.x * (backgroundImage.rectTransform.sizeDelta.x / 2), -250F, 250F), transformY);
         }
     }
 
@@ -46,8 +43,7 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     }
 
     public virtual void OnPointerUp(PointerEventData ped) {
-        input = 0;
-        fireEnabled = false;
+        input = Vector2.zero;
         joystickImage.rectTransform.anchoredPosition = Vector3.zero;
     }
 }
