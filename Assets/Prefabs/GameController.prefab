@@ -63,3 +63,9 @@ MonoBehaviour:
     health2: {fileID: 0}
     health3: {fileID: 0}
     health4: {fileID: 0}
+    red:
+      serializedVersion: 2
+      rgba: 4278190335
+    white:
+      serializedVersion: 2
+      rgba: 1692532735

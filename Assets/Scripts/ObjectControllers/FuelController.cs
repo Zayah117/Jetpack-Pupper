@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FuelController : MonoBehaviour {
+public class FuelController : MonoBehaviour, ISpawnable {
     public float speed;
     public float speedBonus;
     public float fuel;
     public int scoreValue;
 	
 	void Update () {
-        transform.position -= transform.up * Time.deltaTime * speed * GameController.instance.speedMultiplier;
+        Move();
 	}
+
+    public void Move() {
+        transform.position += transform.up * Time.deltaTime * speed * GameController.instance.speedMultiplier;
+    }
+
+    public void RotateTowards(Vector3 target) {
+        transform.up = target - transform.position;
+    }
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Player")) {

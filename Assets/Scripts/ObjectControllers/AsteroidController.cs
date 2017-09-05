@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AsteroidController : MonoBehaviour {
+public class AsteroidController : MonoBehaviour, ISpawnable {
 
     public float minSpeed;
     public float maxSpeed;
@@ -19,12 +19,16 @@ public class AsteroidController : MonoBehaviour {
         gameObject.transform.localScale = new Vector3(scale, scale);
     }
 
-    public void RotateTowards(Vector3 target) {
-        transform.up = target - transform.position;
+    void Update() {
+        Move();
     }
 
-    void Update () {
+    public void Move() {
         transform.position += transform.up * Time.deltaTime * moveSpeed * GameController.instance.speedMultiplier;
+    }
+
+    public void RotateTowards(Vector3 target) {
+        transform.up = target - transform.position;
     }
 
     void OnCollisionEnter2D(Collision2D collision) {
