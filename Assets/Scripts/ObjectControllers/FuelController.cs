@@ -7,6 +7,12 @@ public class FuelController : MonoBehaviour, ISpawnable {
     public float speedBonus;
     public float fuel;
     public int scoreValue;
+
+    float _spawnAreaX = 2.5f;
+
+    public float spawnAreaX {
+        get { return _spawnAreaX; }
+    }
 	
 	void Update () {
         Move();

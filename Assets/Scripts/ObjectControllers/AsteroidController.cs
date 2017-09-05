@@ -12,6 +12,11 @@ public class AsteroidController : MonoBehaviour, ISpawnable {
 
     float moveSpeed;
     float scale;
+    float _spawnAreaX = 3.0f;
+
+    public float spawnAreaX {
+        get { return _spawnAreaX; }
+    }
 
     void Awake() {
         moveSpeed = Random.Range(minSpeed, maxSpeed);
