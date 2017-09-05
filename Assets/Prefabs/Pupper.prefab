@@ -166,7 +166,7 @@ MonoBehaviour:
   bounds: 2.5
   fuel: 1
   fuelDrain: 0.02
-  fireRate: 0.1
+  fireRate: 0.15
   maxHealth: 4
   health: 0
 --- !u!212 &212722018851481140

@@ -38,7 +38,7 @@ public class PupperController : MonoBehaviour {
         DrainFuel();
 
         // Fire Cannons
-        fireCoolDown += Time.deltaTime;
+        fireCoolDown += Time.deltaTime * GameController.instance.speedMultiplier;
         if (virtualJoystick.input.y > virtualJoystick.yThreshold && fireCoolDown > fireRate) {
             FireCannons();
         }
