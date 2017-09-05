@@ -44,6 +44,11 @@ public class PupperController : MonoBehaviour {
         }
 	}
 
+    public void Heal() {
+        health += 1;
+        GameController.instance.UpdateHealthBars(gameObject);
+    }
+
     void DrainFuel() {
         fuel -= fuelDrain * Time.deltaTime * GameController.instance.speedMultiplier;
         if (fuel <= 0) {

@@ -24,7 +24,7 @@ public class Spawner : MonoBehaviour {
 
             float chance = Random.Range(0.0f, 1.0f);
             if (chance <= pickupChance) {
-                SpawnObject(pickups[Random.Range(0, pickups.Length - 1)]);
+                SpawnObject(pickups[Random.Range(0, pickups.Length)]);
             } else {
                 SpawnObject(asteroid);
             }
