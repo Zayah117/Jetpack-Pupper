@@ -100,9 +100,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  speedBonus: 0.05
+  speedBonus: 0.1
   fuel: 0.5
-  scoreValue: 10
+  scoreValue: 50
 --- !u!212 &212701898046620324
 SpriteRenderer:
   m_ObjectHideFlags: 1
