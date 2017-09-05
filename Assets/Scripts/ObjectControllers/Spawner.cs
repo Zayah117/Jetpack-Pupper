@@ -6,7 +6,7 @@ public class Spawner : MonoBehaviour {
     public float minSpawnRate;
     public float maxSpawnRate;
     public GameObject asteroid;
-    public GameObject[] powerups;
+    public GameObject[] pickups;
 
     float spawnRate;
     float nextSpawn;
