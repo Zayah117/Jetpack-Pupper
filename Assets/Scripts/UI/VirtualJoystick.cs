@@ -10,7 +10,7 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
     Image joystickImage;
 
     [HideInInspector]
-    public float yThreshold = 1.15f;
+    public float yThreshold = 1.0f;
     public Vector2 input;
 
     private void Start() {

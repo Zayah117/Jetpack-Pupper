@@ -24,7 +24,8 @@ public class PupperController : MonoBehaviour {
 
     void Start() {
         originalY = transform.position.y;
-        health = 4;
+        health = 2;
+        GameController.instance.UpdateHealthBars(gameObject);
     }
 
 	void Update () {

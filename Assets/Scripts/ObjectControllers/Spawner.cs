@@ -6,25 +6,46 @@ public class Spawner : MonoBehaviour {
     public float minSpawnRate;
     public float maxSpawnRate;
     public float pickupChance;
+    public int minPickupRate;
+    public int maxPickupRate;
+    public int minFuelRate;
+    public int maxFuelRate;
     public GameObject asteroid;
+    public GameObject fuel;
     public GameObject[] pickups;
 
     float spawnRate;
     float nextSpawn;
+    int fuelRate;
+    int nextFuel;
+    int pickupRate;
+    int nextPickup;
 
     void Start() {
-        spawnRate = NewSpawnRate();
+        spawnRate = NewRate(minSpawnRate, maxSpawnRate);
+        fuelRate = NewRate(minFuelRate, maxFuelRate);
+        pickupRate = NewRate(minPickupRate, maxPickupRate);
     }
 
     void Update() {
         nextSpawn += Time.deltaTime * GameController.instance.speedMultiplier;
         if (nextSpawn > spawnRate) {
-            spawnRate = NewSpawnRate();
+            spawnRate = NewRate(minSpawnRate, maxSpawnRate);
             nextSpawn = 0;
+            nextFuel += 1;
+            nextPickup += 1;
 
-            float chance = Random.Range(0.0f, 1.0f);
-            if (chance <= pickupChance) {
+            // Pickup
+            if (nextPickup >= pickupRate) {
+                nextPickup = 0;
+                pickupRate = NewRate(minPickupRate, maxPickupRate);
                 SpawnObject(pickups[Random.Range(0, pickups.Length)]);
+            // Fuel
+            } else if (nextFuel >= fuelRate) {
+                nextFuel = 0;
+                fuelRate = NewRate(minFuelRate, maxFuelRate);
+                SpawnObject(fuel);
+            // Asteroid
             } else {
                 SpawnObject(asteroid);
             }
@@ -39,7 +60,11 @@ public class Spawner : MonoBehaviour {
         currentObject.GetComponent<ISpawnable>().RotateTowards(new Vector3(Random.Range(-spawnArea, spawnArea), transform.GetChild(0).transform.position.y));
     }
 
-    float NewSpawnRate() {
-        return Random.Range(minSpawnRate, maxSpawnRate);
+    int NewRate(int min, int max) {
+        return Random.Range(min, max);
+    }
+
+    float NewRate(float min, float max) {
+        return Random.Range(min, max);
     }
 }
