@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AsteroidController : MonoBehaviour, ISpawnable {
-
+    public Sprite[] asteroidTextures;
     public float minSpeed;
     public float maxSpeed;
     public float minScale;
@@ -19,6 +19,7 @@ public class AsteroidController : MonoBehaviour, ISpawnable {
     }
 
     void Awake() {
+        SetSprite();
         moveSpeed = Random.Range(minSpeed, maxSpeed);
         scale = Random.Range(minScale, maxScale);
         gameObject.transform.localScale = new Vector3(scale, scale);
@@ -26,6 +27,16 @@ public class AsteroidController : MonoBehaviour, ISpawnable {
 
     void Update() {
         Move();
+    }
+
+    void SetSprite() {
+        SpriteRenderer sr = gameObject.GetComponent<SpriteRenderer>();
+        sr.sprite = asteroidTextures[Random.Range(0, asteroidTextures.Length)];
+
+        if (Random.Range(0.0f, 1.0f) > 0.5f)
+            sr.flipX = true;
+        if (Random.Range(0.0f, 1.0f) > 0.5f)
+            sr.flipY = true;
     }
 
     public void Move() {

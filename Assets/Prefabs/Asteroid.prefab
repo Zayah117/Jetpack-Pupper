@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1152309035613432}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 101.43057, y: 3173.8643, z: 0}
+  m_LocalPosition: {x: -1.1334853, y: -2.0324302, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -76,9 +76,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.013576984, y: -0.00000020861626}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.38685822
 --- !u!114 &114418734305071930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +90,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3de192ef3f5b8564a9d37484e647d43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  asteroidTextures:
+  - {fileID: 21300000, guid: 7c7f8348e04a2ef40abb8e83505fa87d, type: 3}
+  - {fileID: 21300000, guid: 74902e281f394634abae6b70c81fc48a, type: 3}
+  - {fileID: 21300000, guid: 46d7a209f9a43cc46867f3e351d39638, type: 3}
+  - {fileID: 21300000, guid: 0d9183adb678ce447bae65cc072e5b24, type: 3}
+  - {fileID: 21300000, guid: 54093549d19b49947a09f94148be890d, type: 3}
   minSpeed: 1
   maxSpeed: 5
   minScale: 0.25
@@ -139,7 +145,7 @@ SpriteRenderer:
   m_SortingLayerID: -2135761475
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1f0be2fb8cc9c514f849d9ee80b5c46d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7c7f8348e04a2ef40abb8e83505fa87d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

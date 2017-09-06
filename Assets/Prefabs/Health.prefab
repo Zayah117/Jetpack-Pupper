@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61541524637629196}
   - component: {fileID: 50691226570423142}
   - component: {fileID: 114594719614326418}
+  - component: {fileID: 114977281530554158}
   m_Layer: 9
   m_Name: Health
   m_TagString: Pickup
@@ -100,6 +101,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+--- !u!114 &114977281530554158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1141813950341884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3249d4bd10d67b948b35f3a137f8d724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 30
 --- !u!212 &212698177464043132
 SpriteRenderer:
   m_ObjectHideFlags: 1

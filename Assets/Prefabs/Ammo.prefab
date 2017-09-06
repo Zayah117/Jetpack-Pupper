@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61808103768147030}
   - component: {fileID: 50539016439413810}
   - component: {fileID: 114955593141030562}
+  - component: {fileID: 114305704456093002}
   m_Layer: 9
   m_Name: Ammo
   m_TagString: Pickup
@@ -88,6 +89,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114305704456093002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1503037747362848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3249d4bd10d67b948b35f3a137f8d724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delay: 30
 --- !u!114 &114955593141030562
 MonoBehaviour:
   m_ObjectHideFlags: 1
