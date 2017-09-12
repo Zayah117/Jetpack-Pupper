@@ -26,4 +26,10 @@ public class AudioController : MonoBehaviour {
             AudioSource.PlayClipAtPoint(audioFX.explosion, pos, volume * 0.5f);
         }
     }
+
+    public void Pickup(Vector3 pos) {
+        if (soundOn) {
+            AudioSource.PlayClipAtPoint(audioFX.pickup, pos);
+        }
+    }
 }

@@ -7,4 +7,5 @@ using System;
 public class AudioFX {
     public AudioClip blasterSound;
     public AudioClip explosion;
+    public AudioClip pickup;
 }

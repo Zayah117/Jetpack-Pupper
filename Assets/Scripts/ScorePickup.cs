@@ -21,6 +21,7 @@ public class ScorePickup : MonoBehaviour, ISpawnable, IPickup {
 
     public void ActivatePickup(GameObject player) {
         GameController.instance.playerScore += scoreValue;
+        AudioController.instance.Pickup(player.transform.position);
         Destroy(gameObject);
     }
 
