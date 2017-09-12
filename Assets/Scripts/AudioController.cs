@@ -21,9 +21,9 @@ public class AudioController : MonoBehaviour {
         }
     }
 
-    public void Explosion(Vector3 pos) {
+    public void Explosion(Vector3 pos, float volume) {
         if (soundOn) {
-            AudioSource.PlayClipAtPoint(audioFX.explosion, pos);
+            AudioSource.PlayClipAtPoint(audioFX.explosion, pos, volume);
         }
     }
 }

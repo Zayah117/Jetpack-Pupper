@@ -11,9 +11,10 @@ public class BulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Asteroid")) {
-            AudioController.instance.Explosion(collision.gameObject.transform.position);
+            AsteroidController asteroidController = collision.GetComponent<AsteroidController>();
+            asteroidController.Expload();
+            AudioController.instance.Explosion(asteroidController.transform.position, asteroidController.scale);
             Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
     }
 }

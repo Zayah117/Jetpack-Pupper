@@ -8,10 +8,10 @@ public class AsteroidController : MonoBehaviour, ISpawnable {
     public float maxSpeed;
     public float minScale;
     public float maxScale;
+    public float scale;
     public Vector3 target;
 
     float moveSpeed;
-    float scale;
     float _spawnAreaX = 3.0f;
 
     public float spawnAreaX {
@@ -45,5 +45,10 @@ public class AsteroidController : MonoBehaviour, ISpawnable {
 
     public void RotateTowards(Vector3 target) {
         transform.up = target - transform.position;
+    }
+
+    public void Expload() {
+        AudioController.instance.Explosion(transform.position, scale);
+        Destroy(gameObject);
     }
 }

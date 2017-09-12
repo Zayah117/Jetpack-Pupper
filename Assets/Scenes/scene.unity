@@ -779,6 +779,11 @@ Prefab:
       propertyPath: player
       value: 
       objectReference: {fileID: 733841890}
+    - target: {fileID: 114946786320095794, guid: d889c2ba0423ca24e94cb520ec63a687,
+        type: 2}
+      propertyPath: audioFX.blasterSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d6938f0a1ddce549b34caed8c4cc876, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d889c2ba0423ca24e94cb520ec63a687, type: 2}
   m_IsPrefabParent: 0
