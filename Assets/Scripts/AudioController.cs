@@ -12,7 +12,6 @@ public class AudioController : MonoBehaviour {
 	void Start () {
 		if (instance == null) {
             instance = this;
-            AudioSource.PlayClipAtPoint(audioFX.backgroundMusic, Vector3.zero);
         }
 	}
 
