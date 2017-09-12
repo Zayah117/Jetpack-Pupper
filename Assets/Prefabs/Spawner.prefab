@@ -83,10 +83,10 @@ MonoBehaviour:
   minSpawnRate: 0.75
   maxSpawnRate: 1.25
   pickupChance: 0.05
-  minPickupRate: 20
-  maxPickupRate: 60
-  minFuelRate: 10
-  maxFuelRate: 30
+  minPickupRate: 60
+  maxPickupRate: 100
+  minFuelRate: 5
+  maxFuelRate: 15
   asteroid: {fileID: 1152309035613432, guid: a40f448dcbe96ab46a44a9b197ba4c19, type: 2}
   fuel: {fileID: 1885194878844666, guid: d3c43483a77dbfd4ba354720b006d8d3, type: 2}
   pickups:

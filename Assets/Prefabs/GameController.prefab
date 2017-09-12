@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   restartDelay: 3
   speedMultiplier: 1
-  speedMultiRate: 10
+  speedMultiRate: 1.5
   playerScore: 0
   pupperIsDead: 0
   ui:
