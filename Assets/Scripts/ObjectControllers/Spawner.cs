@@ -8,22 +8,22 @@ public class Spawner : MonoBehaviour {
     public float pickupChance;
     public int minPickupRate;
     public int maxPickupRate;
-    public int minFuelRate;
-    public int maxFuelRate;
+    public int minScorePickupRate;
+    public int maxScorePickupRate;
     public GameObject asteroid;
-    public GameObject fuel;
+    public GameObject scorePickup;
     public GameObject[] pickups;
 
     float spawnRate;
     float nextSpawn;
-    int fuelRate;
-    int nextFuel;
+    int scorePickupRate;
+    int nextScorePickup;
     int pickupRate;
     int nextPickup;
 
     void Start() {
         spawnRate = NewRate(minSpawnRate, maxSpawnRate);
-        fuelRate = NewRate(minFuelRate, maxFuelRate);
+        scorePickupRate = NewRate(minScorePickupRate, maxScorePickupRate);
         pickupRate = NewRate(minPickupRate, maxPickupRate);
     }
 
@@ -32,7 +32,7 @@ public class Spawner : MonoBehaviour {
         if (nextSpawn > spawnRate) {
             spawnRate = NewRate(minSpawnRate, maxSpawnRate);
             nextSpawn = 0;
-            nextFuel += 1;
+            nextScorePickup += 1;
             nextPickup += 1;
 
             // Pickup
@@ -40,11 +40,11 @@ public class Spawner : MonoBehaviour {
                 nextPickup = 0;
                 pickupRate = NewRate(minPickupRate, maxPickupRate);
                 SpawnObject(pickups[Random.Range(0, pickups.Length)]);
-            // Fuel
-            } else if (nextFuel >= fuelRate) {
-                nextFuel = 0;
-                fuelRate = NewRate(minFuelRate, maxFuelRate);
-                SpawnObject(fuel);
+            // Score Pickup
+            } else if (nextScorePickup >= scorePickupRate) {
+                nextScorePickup = 0;
+                scorePickupRate = NewRate(minScorePickupRate, maxScorePickupRate);
+                SpawnObject(scorePickup);
             // Asteroid
             } else {
                 SpawnObject(asteroid);
