@@ -6,5 +6,5 @@ using System;
 [Serializable]
 public class AudioFX {
     public AudioClip blasterSound;
-
+    public AudioClip explosion;
 }

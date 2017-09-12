@@ -11,6 +11,7 @@ public class BulletController : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collision) {
         if (collision.CompareTag("Asteroid")) {
+            AudioController.instance.Explosion(collision.gameObject.transform.position);
             Destroy(gameObject);
             Destroy(collision.gameObject);
         }

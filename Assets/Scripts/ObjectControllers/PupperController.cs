@@ -79,6 +79,7 @@ public class PupperController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Asteroid")) {
+            AudioController.instance.Explosion(collision.gameObject.transform.position);
             Destroy(collision.gameObject);
             TakeDamage();
         } else if (collision.gameObject.CompareTag("Pickup")) {
