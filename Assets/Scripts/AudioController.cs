@@ -15,7 +15,9 @@ public class AudioController : MonoBehaviour {
         }
 	}
 
-	void Update () {
-		
-	}
+    public void Blaster(Vector3 pos) {
+        if (soundOn) {
+            AudioSource.PlayClipAtPoint(audioFX.blasterSound, pos);
+        }
+    }
 }

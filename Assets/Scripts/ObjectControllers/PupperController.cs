@@ -63,6 +63,7 @@ public class PupperController : MonoBehaviour {
         if (ammo > 0) {
             Instantiate(bullet, rightCannon.position, gameObject.transform.rotation);
             Instantiate(bullet, leftCannon.position, gameObject.transform.rotation);
+            AudioController.instance.Blaster(gameObject.transform.position);
             fireCoolDown = 0;
             ammo -= 1;
         }
