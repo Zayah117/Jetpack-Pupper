@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  speedBonus: 0.01
+  speedBonus: 0
   fuel: 0.5
   scoreValue: 50
 --- !u!212 &212701898046620324
