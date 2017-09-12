@@ -49,6 +49,7 @@ public class AsteroidController : MonoBehaviour, ISpawnable {
 
     public void Expload() {
         AudioController.instance.Explosion(transform.position, scale);
+        SFXController.instance.AsteriodExplosion(transform.position, scale);
         Destroy(gameObject);
     }
 }
