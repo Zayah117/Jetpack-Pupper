@@ -52,7 +52,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioFX:
-    blasterSound: {fileID: 8300000, guid: 5fd9f5225e5448e4c98b3f9b837bd0be, type: 3}
+    backgroundMusic: {fileID: 8300000, guid: 7127971c0029f8b41896707b7052427c, type: 3}
+    blasterSound: {fileID: 8300000, guid: 5d6938f0a1ddce549b34caed8c4cc876, type: 3}
     explosion: {fileID: 8300000, guid: 4f0844b279026a04e93ecd14dff52aa8, type: 3}
   player: {fileID: 0}
   soundOn: 1
