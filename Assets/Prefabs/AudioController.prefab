@@ -54,6 +54,8 @@ MonoBehaviour:
   audioFX:
     blasterSound: {fileID: 8300000, guid: 5fd9f5225e5448e4c98b3f9b837bd0be, type: 3}
     explosion: {fileID: 8300000, guid: 4f0844b279026a04e93ecd14dff52aa8, type: 3}
-    pickup: {fileID: 8300000, guid: 5fe388d4a65e05844bf1335cdee15776, type: 3}
+    pickup: {fileID: 8300000, guid: 78a50380774e5704eac4905d65a692f5, type: 3}
+    bullets: {fileID: 8300000, guid: b958ca065ea76954dad9634d1fe77f0a, type: 3}
+    health: {fileID: 8300000, guid: f5335be8e4b2d4946a0ab962d35903f7, type: 3}
   player: {fileID: 0}
   soundOn: 1

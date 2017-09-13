@@ -21,9 +21,10 @@ public class Ammo : MonoBehaviour, ISpawnable, IPickup {
         // Disable collider
         gameObject.GetComponent<BoxCollider2D>().enabled = false;
 
-        // Heal player
+        // Give ammo
         PupperController playerController = player.GetComponent<PupperController>();
         if (playerController.ammo < playerController.maxAmmo) {
+            AudioController.instance.Bullets(transform.position);
             playerController.ammo = Mathf.Clamp(playerController.ammo + ammoValue, 0, playerController.maxAmmo);
             Destroy(gameObject);
         }

@@ -8,4 +8,6 @@ public class AudioFX {
     public AudioClip blasterSound;
     public AudioClip explosion;
     public AudioClip pickup;
+    public AudioClip bullets;
+    public AudioClip health;
 }

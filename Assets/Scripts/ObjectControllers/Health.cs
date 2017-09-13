@@ -22,6 +22,7 @@ public class Health : MonoBehaviour, ISpawnable, IPickup {
         // Heal player
         PupperController playerController = player.GetComponent<PupperController>();
         if (playerController.health < playerController.maxHealth) {
+            AudioController.instance.Health(transform.position);
             playerController.Heal();
             Destroy(gameObject);
         }

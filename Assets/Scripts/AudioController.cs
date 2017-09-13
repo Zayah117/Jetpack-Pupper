@@ -32,4 +32,16 @@ public class AudioController : MonoBehaviour {
             AudioSource.PlayClipAtPoint(audioFX.pickup, pos);
         }
     }
+
+    public void Bullets(Vector3 pos) {
+        if (soundOn) {
+            AudioSource.PlayClipAtPoint(audioFX.bullets, pos);
+        }
+    }
+
+    public void Health(Vector3 pos) {
+        if (soundOn) {
+            AudioSource.PlayClipAtPoint(audioFX.health, pos);
+        }
+    }
 }
