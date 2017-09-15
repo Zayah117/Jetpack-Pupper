@@ -66,6 +66,9 @@ public class PupperController : MonoBehaviour {
             AudioController.instance.Blaster(gameObject.transform.position);
             fireCoolDown = 0;
             ammo -= 1;
+        } else {
+            AudioController.instance.EmptyBlaster(gameObject.transform.position);
+            fireCoolDown = 0;
         }
     }
 

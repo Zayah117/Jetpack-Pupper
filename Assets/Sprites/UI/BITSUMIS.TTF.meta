@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: cb37a637a499b6945ae3d5f7445f749a
+timeCreated: 1505441107
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bitsumishi
+  fontNames:
+  - Bitsumishi
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

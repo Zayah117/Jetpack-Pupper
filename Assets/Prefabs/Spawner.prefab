@@ -83,8 +83,8 @@ MonoBehaviour:
   minSpawnRate: 0.75
   maxSpawnRate: 1.25
   pickupChance: 0.05
-  minPickupRate: 60
-  maxPickupRate: 100
+  minPickupRate: 1
+  maxPickupRate: 10
   minScorePickupRate: 5
   maxScorePickupRate: 15
   asteroid: {fileID: 1152309035613432, guid: a40f448dcbe96ab46a44a9b197ba4c19, type: 2}
