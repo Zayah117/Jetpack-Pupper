@@ -144,6 +144,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 2
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -159,6 +160,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -176,6 +178,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 2
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -191,6 +194,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -208,6 +212,7 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
   m_MotionVectors: 2
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
@@ -223,6 +228,7 @@ MeshRenderer:
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
   m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
@@ -263,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fb524f3e7c836408df844f66586e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.0003
+  speed: 0.015
 --- !u!114 &114640013581915276
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,7 +281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fb524f3e7c836408df844f66586e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.0006
+  speed: 0.02
 --- !u!114 &114658540534203122
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -287,4 +293,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30fb524f3e7c836408df844f66586e9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.0002
+  speed: 0.01

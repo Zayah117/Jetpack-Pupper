@@ -13,7 +13,7 @@ public class Background : MonoBehaviour {
     }
 
     void Update () {
-        offSetY += speed * GameController.instance.speedMultiplier;
+		offSetY += speed * GameController.instance.speedMultiplier * Time.deltaTime;
 
         mat.SetTextureOffset("_MainTex", new Vector2(0, offSetY));
 	}
