@@ -17,37 +17,37 @@ public class AudioController : MonoBehaviour {
 
     public void Blaster(Vector3 pos) {
         if (soundOn) {
-            AudioSource.PlayClipAtPoint(audioFX.blasterSound, pos);
+			AudioSource.PlayClipAtPoint(audioFX.blasterSound, pos, PlayerPrefs.GetFloat("SFXVolume", 1));
         }
     }
 
     public void EmptyBlaster(Vector3 pos) {
         if (soundOn) {
-            AudioSource.PlayClipAtPoint(audioFX.empty, pos);
+			AudioSource.PlayClipAtPoint(audioFX.empty, pos, PlayerPrefs.GetFloat("SFXVolume", 1));
         }
     }
 
     public void Explosion(Vector3 pos, float volume) {
         if (soundOn) {
-            AudioSource.PlayClipAtPoint(audioFX.explosion, pos, volume * 0.5f);
+			AudioSource.PlayClipAtPoint(audioFX.explosion, pos, volume * 0.5f * PlayerPrefs.GetFloat("SFXVolume", 1));
         }
     }
 
     public void Pickup(Vector3 pos) {
         if (soundOn) {
-            AudioSource.PlayClipAtPoint(audioFX.pickup, pos);
+			AudioSource.PlayClipAtPoint(audioFX.pickup, pos, PlayerPrefs.GetFloat("SFXVolume", 1));
         }
     }
 
     public void Bullets(Vector3 pos) {
         if (soundOn) {
-            AudioSource.PlayClipAtPoint(audioFX.bullets, pos);
+			AudioSource.PlayClipAtPoint(audioFX.bullets, pos, PlayerPrefs.GetFloat("SFXVolume", 1));
         }
     }
 
     public void Health(Vector3 pos) {
         if (soundOn) {
-            AudioSource.PlayClipAtPoint(audioFX.health, pos);
+			AudioSource.PlayClipAtPoint(audioFX.health, pos, PlayerPrefs.GetFloat("SFXVolume", 1));
         }
     }
 }

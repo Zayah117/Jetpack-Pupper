@@ -15,7 +15,8 @@ public class BackgroundMusic : MonoBehaviour {
 	void Update () {
 		if (!audioSource.isPlaying) {
             audioSource.clip = clips[nextIndex];
-            audioSource.Play();
+			audioSource.Play();
+			audioSource.volume = PlayerPrefs.GetFloat("MusicVolume", 0.5f) * 0.5f;
             nextIndex += 1;
             if (nextIndex >= clips.Length) {
                 nextIndex = 0;
