@@ -50,4 +50,10 @@ public class AudioController : MonoBehaviour {
 			AudioSource.PlayClipAtPoint(audioFX.health, pos, PlayerPrefs.GetFloat("SFXVolume", 1));
         }
     }
+
+	public void Button() {
+		if (soundOn) {
+			AudioSource.PlayClipAtPoint(audioFX.buttonPress, Vector3.zero, PlayerPrefs.GetFloat("SFXVolume", 1));
+		}
+	}
 }

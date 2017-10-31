@@ -11,4 +11,5 @@ public class AudioFX {
     public AudioClip bullets;
     public AudioClip empty;
     public AudioClip health;
+	public AudioClip buttonPress;
 }

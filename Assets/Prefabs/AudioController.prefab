@@ -58,5 +58,6 @@ MonoBehaviour:
     bullets: {fileID: 8300000, guid: b958ca065ea76954dad9634d1fe77f0a, type: 3}
     empty: {fileID: 8300000, guid: e501b79750dac444da4045e135a6f968, type: 3}
     health: {fileID: 8300000, guid: f5335be8e4b2d4946a0ab962d35903f7, type: 3}
+    buttonPress: {fileID: 8300000, guid: 8074a2aee86eb6a4e984af00e215f4a7, type: 3}
   player: {fileID: 0}
   soundOn: 1
