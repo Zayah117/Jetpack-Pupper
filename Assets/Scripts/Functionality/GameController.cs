@@ -86,6 +86,11 @@ public class GameController : MonoBehaviour {
         pupperIsDead = true;
         player.SetActive(false);
 
+		// Highscore
+		if (playerScore > SaveLoadManager.LoadScore()) {
+			SaveLoadManager.SaveScore(playerScore);
+		}
+
         ui.hudPanel.SetActive(false);
         ui.gameOverPanel.SetActive(true);
 
