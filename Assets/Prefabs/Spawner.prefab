@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5f935f66d26564ba4d998837f5279f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initialSpawnDelay: 5
   minSpawnRate: 0.75
   maxSpawnRate: 1.25
   pickupChance: 0.05

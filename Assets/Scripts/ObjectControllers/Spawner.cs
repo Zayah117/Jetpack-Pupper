@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
+	public float initialSpawnDelay;
     public float minSpawnRate;
     public float maxSpawnRate;
     public float pickupChance;
@@ -14,6 +15,7 @@ public class Spawner : MonoBehaviour {
     public GameObject scorePickup;
     public GameObject[] pickups;
 
+	float spawnDelay;
     float spawnRate;
     float nextSpawn;
     int scorePickupRate;
@@ -28,28 +30,32 @@ public class Spawner : MonoBehaviour {
     }
 
     void Update() {
-        nextSpawn += Time.deltaTime * GameController.instance.speedMultiplier;
-        if (nextSpawn > spawnRate) {
-            spawnRate = NewRate(minSpawnRate, maxSpawnRate);
-            nextSpawn = 0;
-            nextScorePickup += 1;
-            nextPickup += 1;
+		if (spawnDelay < initialSpawnDelay)
+			spawnDelay += Time.deltaTime;
+		else {
+			nextSpawn += Time.deltaTime * GameController.instance.speedMultiplier;
+			if (nextSpawn > spawnRate) {
+				spawnRate = NewRate(minSpawnRate, maxSpawnRate);
+				nextSpawn = 0;
+				nextScorePickup += 1;
+				nextPickup += 1;
 
-            // Pickup
-            if (nextPickup >= pickupRate) {
-                nextPickup = 0;
-                pickupRate = NewRate(minPickupRate, maxPickupRate);
-                SpawnObject(pickups[Random.Range(0, pickups.Length)]);
-            // Score Pickup
-            } else if (nextScorePickup >= scorePickupRate) {
-                nextScorePickup = 0;
-                scorePickupRate = NewRate(minScorePickupRate, maxScorePickupRate);
-                SpawnObject(scorePickup);
-            // Asteroid
-            } else {
-                SpawnObject(asteroid);
-            }
-        }
+				// Pickup
+				if (nextPickup >= pickupRate) {
+					nextPickup = 0;
+					pickupRate = NewRate(minPickupRate, maxPickupRate);
+					SpawnObject(pickups[Random.Range(0, pickups.Length)]);
+					// Score Pickup
+				} else if (nextScorePickup >= scorePickupRate) {
+					nextScorePickup = 0;
+					scorePickupRate = NewRate(minScorePickupRate, maxScorePickupRate);
+					SpawnObject(scorePickup);
+					// Asteroid
+				} else {
+					SpawnObject(asteroid);
+				}
+			}			
+		}
     }
 
     void SpawnObject(GameObject selectedObject) {
