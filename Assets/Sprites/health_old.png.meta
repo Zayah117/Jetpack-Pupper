@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: e3b0ef36e398fed4d9285cb09b57c52a
-timeCreated: 1509475204
+guid: 25bc9abb69257814f9ad3577850916bc
+timeCreated: 1504707795
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
-  externalObjects: {}
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -58,7 +57,6 @@ TextureImporter:
   platformSettings:
   - buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -67,7 +65,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: Standalone
     maxTextureSize: 1024
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -76,7 +73,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: iPhone
     maxTextureSize: 1024
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -85,7 +81,6 @@ TextureImporter:
     overridden: 0
   - buildTarget: Android
     maxTextureSize: 1024
-    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50

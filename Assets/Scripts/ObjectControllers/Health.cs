@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, ISpawnable, IPickup {
     public float speed;
+	public float rotateSpeed;
+	public SpriteRenderer sprite;
 
     float _spawnAreaX = 2.5f;
 
@@ -13,6 +15,7 @@ public class Health : MonoBehaviour, ISpawnable, IPickup {
 
     void Update() {
         Move();
+		RotateSprite();
     }
 
     public void ActivatePickup(GameObject player) {
@@ -35,4 +38,9 @@ public class Health : MonoBehaviour, ISpawnable, IPickup {
     public void RotateTowards(Vector3 target) {
         transform.up = -(target - transform.position);
     }
+
+	void RotateSprite() {
+		float rotation = rotateSpeed * Time.deltaTime;
+		sprite.transform.Rotate(new Vector3(0, 0, rotation));
+	}
 }
