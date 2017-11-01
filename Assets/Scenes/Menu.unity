@@ -1139,7 +1139,7 @@ Prefab:
         type: 2}
       propertyPath: clips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 463abec3e0a9bdb4fbb8af9893339595, type: 3}
+      objectReference: {fileID: 8300000, guid: b8c6e405771f84446999b9b60203958b, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c8a3e92e2f2392d43a65057af5146bfa, type: 2}
   m_IsPrefabParent: 0
