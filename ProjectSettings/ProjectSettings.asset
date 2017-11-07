@@ -224,8 +224,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Zayah/Desktop/my_keystore.keystore
+  AndroidKeyaliasName: jetpackpupperkey
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
